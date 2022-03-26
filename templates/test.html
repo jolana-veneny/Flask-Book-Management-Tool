@@ -1,0 +1,24 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% for row in rows %}
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    <h4 class="card-title">{{ row[1]}}</h4>
+    <p class="card-text"> by {{ row[2]}} {{ row[3]}}</p>
+      {% for trow in trows %}
+      <h5 class="card-subtitle">Recommended by: {{ trow[0]}}</h5>
+      {% endfor %}
+  </div>
+</div>
+{% endfor %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="{{url_for('static', filename='JS/script.js')}}"></script>
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body  onload="typeWriter(txt, 'demo')" >
+        <div class="container-fluid" >
+          <div class="row justify-content-center" id="Booklog">
+            <h2 class="h2">BookLog</h2>
+          </div>
+
+          <nav id="navbar2">
+              <ul>
+                <li id="navitem">
+                  <a href="/">Home</a>
+                </li>
+                <li id="navitem">
+                  <a href="/overview">Overview</a>
+                </li>
+                <li id="navitem">
+                  <a href="/form">Add a Book</a>
+                </li>
+                <li id="navitem">
+                  <a href="/search">Find a Book</a>
+                </li>
+                <li id="navitem">
+                  <a href="/recommend">Recommended</a>
+                </li>
+                {% if session.UserID %}
+                <li id="navitem">
+                  <a href="/logout">Log Out</a>
+                </li>
+                {% endif %}
+              </ul>
+            </nav>
+        </div>
+
+          {% block main %}{% endblock %}
+
+            
+
+        <footer class="footer">
+          <p>© 2020 The Nerd Company. All Rights Reserved. <br>
+          Contact us at Edoras@MiddleEarth.Com</p>
+          </footer>
+
+          <script>
+            $(document).ready(function(){
+              $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+            });
+          </script>
+    </body>
+
+</html>

@@ -1,0 +1,360 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Advanced Search
+{% endblock %}
+
+{% block main %}
+<div class="container letter" id="body_content">
+    <h2 class="fs-title">Search by:</h2>
+    <div class="rowa">
+        <form action="/search" method="post" autocomplete="on">
+            
+            <div class="collapsible">
+                <input id="collapsible1" type="checkbox" name="collapsible">
+                <label for="collapsible1" class="fs-subtitle">Author</label>
+                <div class="collapsible-body">
+                <span>
+                    <div class="row msform">
+                        <div class="form-group col-md">
+                            <input autofocus type="text" class="form-control" name="AuthorFirstName" id="Author_search" placeholder="First Name">
+                          </div>
+                          <div class="form-group col-md">
+                            <input autofocus type="text" class="form-control" id="Author_search" name="AuthorLastName" placeholder="Last Name">
+                          </div>
+                    </div>
+                </span>
+                </div>
+            </div>
+            
+            <div class="collapsible">
+                <input id="collapsible2" type="checkbox" name="collapsible">
+                <label for="collapsible2" class="fs-subtitle">Title</label>
+                <div class="collapsible-body">
+                    <span>
+                        <div class="row msform">
+                            <div class="form-group col-md">
+                                <input autofocus type="text" class="form-control" name= "Title" id="Title" placeholder="Title" >
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+
+            <div class="collapsible">
+                <input id="collapsible3" type="checkbox" name="collapsible">
+                <label for="collapsible3" class="fs-subtitle">Language</label>
+                <div class="collapsible-body">
+                <span>
+                    <div class="row msform">
+                        <div class="form-group col-md">
+                            <input autofocus type="text" class="form-control" id="Language" name="Language" placeholder="Language">
+                        </div>
+                    </div>
+                </span>
+                </div>
+            </div>
+
+            <div class="collapsible">
+                <input id="collapsible4" type="checkbox" name="collapsible">
+                <label for="collapsible4" class="fs-subtitle">Topic</label>
+                <div class="collapsible-body">
+                <span>
+                    <div class="row justify-content-center"  >
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Action">
+                              <span> Action </span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Children">
+                              <span> Children's</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Fantasy">
+                              <span> Fantasy </span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Mystery">
+                              <span> Mystery</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Political_thriller">
+                              <span> Political thriller</span>
+                            </label>
+                          </p>
+                        </div>            
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Romance">
+                              <span> Romance</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Science_fiction">
+                              <span> Science fiction</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Art">
+                              <span> Art </span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Autobiography">
+                              <span> Autobiography</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Guide">
+                              <span> Guide </span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="History">
+                              <span> History</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Languages">
+                              <span> Languages</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Media">
+                              <span> Media</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Politics">
+                              <span> Politics</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1" name="Security">
+                              <span> National Security</span>
+                            </label>
+                          </p>
+                        </div>
+                    </div>
+                </span>
+                </div>
+            </div>
+
+            <div class="collapsible">
+                <input id="collapsible5" type="checkbox" name="collapsible">
+                <label for="collapsible5" class="fs-subtitle">Length (pages)</label>
+                <div class="collapsible-body">
+                <span>
+                    <div class="row justify-content-center"  >
+            
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="200" name="200">
+                              <span> 0 - 200 </span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="400" name="400">
+                              <span> 201 - 400 </span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="600" name="600">
+                              <span> 401 - 600 </span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="800" name="800">
+                              <span> 601 - 800 </span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="1000" name="1000">
+                              <span> 800 + </span>
+                            </label>
+                          </p>
+                        </div>
+                    </div>           
+                </span>
+                </div>
+            </div>
+
+            <div class="collapsible">
+                <input id="collapsible6" type="checkbox" name="collapsible">
+                <label for="collapsible6" class="fs-subtitle">Review Score</label>
+                <div class="collapsible-body">
+                <span>
+                    <div class="row justify-content-center"  >
+            
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="20" name="20">
+                              <span> 0 - 20 %</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="40" name="40">
+                              <span> 21 - 40 %</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="60" name="60">
+                              <span> 41 - 60 %</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="80" name="80">
+                              <span> 61 - 80 %</span>
+                            </label>
+                          </p>
+                        </div>
+                        <div class="form-group col-auto msform3">
+                          <p>
+                            <label style="border: none !important; font-weight: lighter">
+                              <input class="filled-in" type="checkbox" value="100" name="100">
+                              <span> 81 - 100 %</span>
+                            </label>
+                          </p>
+                        </div>
+                    </div>           
+                </span>
+                </div>
+            </div>
+            <button class="btn button btn-block" style="margin-top: 30px; width: 10%;" type="submit">Search</button>
+        </form>
+    </div>
+    
+
+    <h2 class="fs-title">Your search results: <br> <br> </h2>
+    {% if name_results or topic_results or length_results or review_results %}
+        <table class="table">
+          <thead>
+              <tr>
+                  <th style="width:50%" scope="col" >Title</th>
+                  <th style="width:15%" scope="col">First name</th>
+                  <th style="width:15%" scope="col">Last Name</th>
+                  <th style="width:20%"scope="col"></th>
+              </tr>
+          </thead>
+          {% for row in name_results %}
+          <tbody id="myTable">
+              <tr id = "tr" class="justify-content-start">
+                  <td style="width:50%"  id="Overview_BookTitle" style="background-color: salmon;">{{ row[1] }}</td>
+                  <td style="width:15%" >{{ row[2] }}</td>
+                  <td style="width:15%" >{{ row[3] }}</td>
+                  <td style="width:20%" ><a href="{{ url_for('detail', bookId=row[0]) }}"
+                      type="button" id="button">See Details</a></td>
+              </tr>
+          </tbody>
+          {% endfor %}
+
+          {% for row in topic_results %}
+          <tbody id="myTable">
+              <tr id = "tr" class="justify-content-start">
+                  <td style="width:50%"  id="Overview_BookTitle" style="background-color: salmon;">{{ row[1] }}</td>
+                  <td style="width:15%" >{{ row[2] }}</td>
+                  <td style="width:15%" >{{ row[3] }}</td>
+                  <td style="width:20%" ><a href="{{ url_for('detail', bookId=row[0]) }}"
+                      type="button" id="button">See Details</a></td>
+              </tr>
+          </tbody>
+          {% endfor %}
+
+          {% for row in length_results %}
+          <tbody id="myTable">
+              <tr id = "tr" class="justify-content-start">
+                  <td style="width:50%"  id="Overview_BookTitle" style="background-color: salmon;">{{ row[1] }}</td>
+                  <td style="width:15%" >{{ row[2] }}</td>
+                  <td style="width:15%" >{{ row[3] }}</td>
+                  <td style="width:20%" ><a href="{{ url_for('detail', bookId=row[0]) }}"
+                      type="button" id="button">See Details</a></td>
+              </tr>
+          </tbody>
+          {% endfor %}
+
+          {% for row in review_results %}
+          <tbody id="myTable">
+              <tr id = "tr" class="justify-content-start">
+                  <td style="width:50%"  id="Overview_BookTitle" style="background-color: salmon;">{{ row[1] }}</td>
+                  <td style="width:15%" >{{ row[2] }}</td>
+                  <td style="width:15%" >{{ row[3] }}</td>
+                  <td style="width:20%" ><a href="{{ url_for('detail', bookId=row[0]) }}"
+                      type="button" id="button">See Details</a></td>
+              </tr>
+          </tbody>
+          {% endfor %}
+      </table>
+    {% endif %}
+
+
+</div>
+{% endblock %}

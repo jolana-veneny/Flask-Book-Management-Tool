@@ -1,0 +1,381 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Edit
+{% endblock %}
+
+{% block main %}
+ <div class="container form_position" >
+  <div class="letter">
+    <form action="/edit/bookId" method="post" autocomplete="off" class="needs-validation" novalidate >
+      <div class="row justify-content-between">
+
+        <div class="form-group col-6">
+          <h2 class="fs-title">Please, enter your book details:</h2>        
+        </div>
+        <div class="form-group col-4 " id="check_wrapper">
+            <p>        
+              {% if recommend == 1 %}
+              <label>
+                <input id="indeterminate-checkbox" type="checkbox" value="1" name="checkbox" checked>
+                <span> Recommend me!</span>
+              </label>        
+              {% else %}
+              <label>
+                <input id="indeterminate-checkbox" type="checkbox" value="1" name="checkbox">
+                <span> Recommend me!</span>
+              </label>    
+              {% endif %}
+            </p>
+        </div>
+      </div>
+
+      <div class="row msform">
+        <div class="form-group col-md-5" >
+          <label class="fs-subtitle" for="Title">Book Title</label>
+          <input autofocus type="text" class="form-control" name= "Title" id="Title" value="{{ title }}" required>
+          <div class="invalid-feedback">
+            Please provide a valid title.
+          </div>
+        </div>          
+        <div class="form-group col-md">
+          <label class="fs-subtitle" for="AuthorFirstName">Author</label>
+          <input autofocus type="text" class="form-control" name="AuthorFirstName" id="AuthorFirstName" value="{{ authorFirstName }}" required>
+          <div class="invalid-feedback">
+            Please provide a valid first name.
+          </div>
+        </div>
+        <div class="form-group col-md">
+          <label class="fs-subtitle" for="AuthorLastName">Author</label>
+          <input autofocus type="text" class="form-control" id="AuthorLastName" name="AuthorLastName" value="{{ authorLastName }}" required>
+          <div class="invalid-feedback">
+            Please provide a valid last name.
+          </div>
+        </div>
+      </div>
+
+      <div class="row msform">
+        <div class="form-group col-md-3">
+          <label class="fs-subtitle" for="Year">Publication Year</label>
+          <input autofocus type="text" class="form-control" name="Year" id="Year" value="{{ year }}" required>
+          <div class="invalid-feedback">
+            Please provide a valid year.
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+          <label class="fs-subtitle" for="Language">Language</label>
+          <input autofocus type="text" class="form-control" id="Language" name="Language" value="{{ language }}" required>
+          <div class="invalid-feedback">
+            Please provide a language.
+          </div> 
+        </div>
+        <div class="form-group col-md-3">
+          <label class="fs-subtitle" for="Pages">Number of Pages</label>
+          <input type="text" class="form-control" id="Pages" name="Pages" value="{{ pages }}" required>
+          <div class="invalid-feedback">
+            Please provide a number.
+          </div>
+        </div>
+        <div class="form-group col-md-3">
+          <label class="fs-subtitle" for="Type">Type of Book</label>
+          <select name="Type" id="Type" class="form-control" value="{{ type }}" required>
+            <option selected>{{ type }}</option>
+            <option>Non-fiction</option>
+            <option>Fiction</option>
+            <option>Poetry</option>
+          </select>
+          <div class="invalid-feedback">
+            Please chose a type.
+          </div>
+        </div>
+      </div>
+
+        <div class="row ">
+          <div class="form-group col-lg msform2">
+            <label class="fs-subtitle" for="formControlRange">Review</label>
+            <input type="range" class="form-control-range" min="0" max="100" name="review" id="formControlRange" value = "{{ review }}">
+          </div>
+            <div class="form-group col-md msform">
+              <label class="fs-subtitle" for="ReadingLevel">Enter text to determine reading level</label>
+              <textarea class="form-control" id="ReadingLevel" name="ReadingLevel" rows="2"></textarea>
+            </div>
+          </div>
+
+
+          <label class="fs-subtitle" for="Topics" style="margin-bottom: 15px;">Topics</label>
+          <div class="row justify-content-start">
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if action == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Action" checked>
+                  <span> Action </span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Action">
+                  <span> Action </span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if children == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Children" checked>
+                  <span> Children's</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Children">
+                  <span> Children's</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if fantasy == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Fantasy"checked>
+                  <span> Fantasy </span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Fantasy">
+                  <span> Fantasy </span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if mystery == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Mystery"checked>
+                  <span> Mystery</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Mystery">
+                  <span> Mystery</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if political_thriller == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Political_thriller" checked>
+                  <span> Political thriller</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Political_thriller">
+                  <span> Political thriller</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>            
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if romance == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Romance"checked>
+                  <span> Romance</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Romance">
+                  <span> Romance</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if science_fiction == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Science_fiction"checked>
+                  <span> Science fiction</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Science_fiction">
+                  <span> Science fiction</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if art == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Art"checked>
+                  <span> Art </span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Art">
+                  <span> Art </span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if autobiography == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Autobiography"checked>
+                  <span> Autobiography</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Autobiography">
+                  <span> Autobiography</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if guide == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Guide"checked>
+                  <span> Guide </span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Guide">
+                  <span> Guide </span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if history == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="History"checked>
+                  <span> History</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="History">
+                  <span> History</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if languages == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Languages"checked>
+                  <span> Languages</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Languages">
+                  <span> Languages</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if media == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Media"checked>
+                  <span> Media</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Media">
+                  <span> Media</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if politics == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Politics"checked>
+                  <span> Politics</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Politics">
+                  <span> Politics</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+            <div class="form-group col-auto msform3">
+              <p>
+                {% if national_security == 1 %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Security"checked>
+                  <span> National Security</span>
+                </label>
+                {% else %}
+                <label>
+                  <input class="filled-in" type="checkbox" value="1" name="Security">
+                  <span> National Security</span>
+                </label>
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        
+          <div class="row justify-content-right">
+            <div class="form-group col-md-4 offset-8 msform4">
+              <label class="fs-subtitle" for="Status">Select Status</label>
+              <select name="Status" id="Status" class="form-control" id="exampleFormControlSelect1" value="{{ status }}" required>
+                  <option value="{{ status }}">{{ status }}</option>
+                  <option value="Unread">Unread</option>
+                  <option value="Read">Read</option>
+                  <option value="In Progress">In Progress</option>
+              </select>
+              <div class="invalid-feedback">
+                Please choose a status.
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+      <button class="btn button btn-block" type="submit">Edit</button>
+    </form>
+  </div>
+</div>
+
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+<div class="container letter" id="body_content">
+    <h2 class="fs-title">Books Overview</h2>
+    {% if not rows %}
+        WOW! Such Empty!
+        <a href="/form" type="button" id="button" style="width: 20%;">Add a Book!</a>
+    {% else %}
+        <input class="form-control" id="myInput" type="text" placeholder="Quick search...">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width:50%" scope="col" >Title</th>
+                    <th style="width:15%" scope="col">First name</th>
+                    <th style="width:15%" scope="col">Last Name</th>
+                    <th style="width:20%"scope="col"></th>
+                </tr>
+            </thead>
+            {% for row in rows %}
+            <tbody id="myTable">
+                <tr id = "tr" class="justify-content-start">
+                    <td style="width:50%"  id="Overview_BookTitle" style="background-color: salmon;">{{ row[1] }}</td>
+                    <td style="width:15%" >{{ row[2] }}</td>
+                    <td style="width:15%" >{{ row[3] }}</td>
+                    <td style="width:20%" ><a href="{{ url_for('detail', bookId=row[0]) }}"
+                        type="button" id="button">See Details</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    {% endif %}
+</div>
+{% endblock %}

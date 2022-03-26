@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<div class="container" id="body_content" >
+    <!-- onload="typeWriter(txt, 'demo')" -->
+    <div class="letter">
+        <div>
+        <h2 class="fs-title0">Welcome to BookLog!</h2>
+        </div>
+        <p id="idex_p"> BookLog is an online web application which allows you to keep track of all your physical books!</p>
+        <p id="idex_p">With BookLog you can: </p>
+            <ul class="ul">
+                <li class="li" > See all your books in one place</li>
+                <li class="li" > Add books</li>
+                <li class="li" > Edit books</li>
+                <li class="li" > Look up books by title, author, topic, and much more</li>
+                <li class="li" > Rate books and reccommend them to others</li>
+                <li class="li" > See books reccommended by others</li>
+            </ul>
+        <div class="container">
+            <div class="row justify-content-center" id="button_group">
+                <div class="col-2">
+                    <div>
+                        <a href="/register" type="button" id="button">Register</a>
+                    </div>
+                </div>
+                <div class="col-2 offset-1">
+                    <div>
+                        <a href="/login" type="button" id="button">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--         <div class="container" id="demo_container">
+            <p id="demo"></p>
+        </div> -->
+    </div>
+</div>
+
+
+<script>
+    var i = 0;
+    var txt = "“All that is gold does not glitter, Not all those who wander are lost; The old that is strong does not wither, Deep roots are not reached by the frost.” J.R.R. Tolkien"
+    var speed = 100;
+    function typeWriter() {
+              if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+              }
+            }
+</script>
+
+{% endblock %}

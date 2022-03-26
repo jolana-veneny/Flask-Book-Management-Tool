@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recommended
+{% endblock %}
+
+{% block main %}
+<div class="container" id="body_content">
+    <div>
+        <h2 class="fs-title" style="text-align: center; padding-bottom: 30px;">Others recommend:</h1>
+    </div>
+    <div class="wrapper">
+        {% for row in rows%}
+            <div class="card" style="vertical-align: middle;">
+                <div class="card-body" >
+                    <h4 class="card-title">{{ row[1]}}</h4>
+                    <p class="card-text"> by {{ row[2]}} {{ row[3]}}</p>
+                </div>
+                <div class="card-footer">{{ row[14]}} recommends</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

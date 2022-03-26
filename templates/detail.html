@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ row[1] }}
+{% endblock %}
+
+{% block main %}
+<div class="container letter" id="body_content2">
+    <div class="container">
+        <h1 id="h1">{{ row[1] }}</h1>
+    </div> 
+    <div class="container">
+        <div class="row justify-content-start" style="margin: none;">
+            <div class="col-2" >
+                <p id="p1">Author:</p>
+            </div>
+            <div class="col-auto">
+                <pid="p2">{{ row[2] }} {{ row[3] }}</p>
+            </div> 
+        </div>
+    </div> 
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-2">
+                <p id="p1">Year:</p>
+            </div>
+            <div class="col-2">
+                <p id="p2">{{ row[4] }}</p>
+            </div> 
+            <div class="col-2 offset-2">
+                <p id="p1">Pages:</p>
+            </div>
+            <div class="col-2 offset-1">
+                <p id="p2">{{ row[7] }}</p>
+            </div> 
+        </div>
+    </div> 
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-2">
+                <p id="p1">Type:</p>
+            </div>
+            <div class="col-3">
+                <p id="p2">{{ row[6] }}</p>
+            </div> 
+            <div class="col-2 offset-1">
+                <p id="p1">Language:</p>
+            </div>
+            <div class="col-2 offset-1">
+                <p id="p2">{{ row[5] }}</p>
+            </div> 
+        </div>
+    </div>    
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-2">
+                <p id="p1">Topic:</p>
+            </div>
+            <div class="col-auto">
+                <p id="p2"> 
+                            {% if row[15] == 1 %}
+                            Action
+                            {% endif %}
+                            {% if row[16] == 1 %}
+                            Children's
+                            {% endif %}
+                            {% if row[17] == 1 %}
+                            Fantasy
+                            {% endif %}
+                            {% if row[18] == 1 %}
+                            Mystery
+                            {% endif %}
+                            {% if row[19] == 1 %}
+                            Political thriller
+                            {% endif %}
+                            {% if row[20] == 1 %}
+                            Romance
+                            {% endif %}
+                            {% if row[21] == 1 %}
+                            Science fiction
+                            {% endif %}
+                            {% if row[22] == 1 %}
+                            Art
+                            {% endif %}
+                            {% if row[23] == 1 %}
+                            Autobiography
+                            {% endif %}
+                            {% if row[24] == 1 %}
+                            Guide
+                            {% endif %}
+                            {% if row[25] == 1 %}
+                            History
+                            {% endif %}
+                            {% if row[26] == 1 %}
+                            Languages  
+                            {% endif %}
+                            {% if row[27] == 1 %}
+                            Media
+                            {% endif %}
+                            {% if row[28] == 1 %}
+                            Politics
+                            {% endif %}
+                            {% if row[29] == 1 %}
+                            National Security    
+                            {% endif %}
+
+
+                </p>
+            </div>
+        </div> 
+    </div>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-auto">
+                <p id="p1">Reading Level:</p>
+            </div>
+            <div class="col-4">
+                <p id="p2">{{ row[8] }}</p>
+            </div> 
+        </div>
+    </div> 
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-2">
+                <p id="p1">Status:</p>
+            </div>
+            <div class="col-3">
+                <p id="p2">{{ row [9] }}</p>
+            </div>
+            <div class="col-auto offset-1">
+                <p id="p1">Review Score:</p>
+            </div>
+            <div class="col-2">
+                <p id="p2">{{ row [10] }}</p>
+            </div>  
+        </div> 
+    </div> 
+    <div class="container">
+        <div class="row justify-content-around" id="button_group">
+            <div class="col-4">
+                <div>
+                    <form action="{{ url_for('delete', bookId=row[0]) }}" method="post" onsubmit="return confirm('Are you sure you want to delete the book?')">
+                        <input type="submit" id="buttonDelete" value="Delete">             
+                    </form>
+                </div>
+            </div>
+            <div class="col-4">
+                <div>
+                    <a href="{{ url_for('edit', bookId=row[0]) }}"
+                        type="button" id="buttonEdit">Edit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+{% endblock %}

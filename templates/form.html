@@ -1,0 +1,268 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Form
+{% endblock %}
+
+{% block main %}
+
+  <div class="container form_position" >
+    <div class="letter">
+      <form action="/form" method="post" class="needs-validation" novalidate >
+        <div class="row justify-content-between">
+          <div class="form-group col-6">
+            <h2 class="fs-title">Please, enter your book details:</h2>        
+          </div>
+          <div class="form-group col-4 " id="check_wrapper">
+              <p>
+                <label>
+                  <input id="indeterminate-checkbox" type="checkbox" value="1" name="checkbox">
+                  <span> Recommend me!</span>
+                </label>
+              </p>
+          </div>
+        </div>
+        <div class="row msform">
+          <div class="form-group col-md-5" >
+            <label class="fs-subtitle" for="Title">Book Title</label>
+            <input autofocus type="text" class="form-control" name= "Title" id="Title" placeholder="Title" required>
+            <div class="invalid-feedback">
+              Please provide a valid title.
+            </div>
+          </div>          
+          <div class="form-group col-md">
+            <label class="fs-subtitle" for="AuthorFirstName">Author</label>
+            <input autofocus type="text" class="form-control" name="AuthorFirstName" id="AuthorFirstName" placeholder="First Name" required>
+            <div class="invalid-feedback">
+              Please provide a valid first name.
+            </div>
+          </div>
+          <div class="form-group col-md">
+            <label class="fs-subtitle" for="AuthorLastName">Author</label>
+            <input autofocus type="text" class="form-control" id="AuthorLastName" name="AuthorLastName" placeholder="Last Name" required>
+            <div class="invalid-feedback">
+              Please provide a valid last name.
+            </div>
+          </div>
+        </div>
+
+        <div class="row msform">
+          <div class="form-group col-md-3">
+            <label class="fs-subtitle" for="Year">Publication Year</label>
+            <input autofocus type="text" class="form-control" name="Year" id="Year" placeholder="Publication Year" required>
+            <div class="invalid-feedback">
+              Please provide a valid year.
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label class="fs-subtitle" for="Language">Language</label>
+            <input autofocus type="text" class="form-control" id="Language" name="Language" placeholder="Language" required>
+            <div class="invalid-feedback">
+              Please provide a language.
+            </div> 
+          </div>
+          <div class="form-group col-md-3">
+            <label class="fs-subtitle" for="Pages">Number of Pages</label>
+            <input type="text" class="form-control" id="Pages" name="Pages" placeholder="Number of Pages" required>
+            <div class="invalid-feedback">
+              Please provide a number.
+            </div>
+          </div>
+          <div class="form-group col-md-3">
+            <label class="fs-subtitle" for="Type">Type of Book</label>
+            <select name="Type" id="Type" class="form-control"  required>
+              <option selected>Choose a type</option>
+              <option>Non-fiction</option>
+              <option>Fiction</option>
+              <option>Poetry</option>
+            </select>
+            <div class="invalid-feedback">
+              Please chose a type.
+            </div>
+          </div>
+        </div>
+
+          <div class="row">
+            <div class="form-group col-lg msform2">
+              <label class="fs-subtitle" for="formControlRange">Review</label>
+              <input type="range" class="form-control-range" min="0" max="100" name="review" id="formControlRange">
+            </div>
+
+              <div class="form-group col-md msform">
+                <label class="fs-subtitle" for="ReadingLevel">Enter text to determine reading level</label>
+                <textarea class="form-control" id="ReadingLevel" name="ReadingLevel" rows="2"></textarea>
+              </div>
+          </div>
+
+
+          <label class="fs-subtitle" for="Topics" style="margin-bottom: 15px;">Topics</label>
+          <div class="row justify-content-start" >
+            
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Action">
+                    <span> Action </span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Children">
+                    <span> Children's</span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Fantasy">
+                    <span> Fantasy </span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Mystery">
+                    <span> Mystery</span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Political_thriller">
+                    <span> Political thriller</span>
+                  </label>
+                </p>
+              </div>            
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Romance">
+                    <span> Romance</span>
+                  </label>
+                </p>
+              </div>
+
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Science_fiction">
+                    <span> Science fiction</span>
+                  </label>
+                </p>
+              </div>
+
+          
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Art">
+                    <span> Art </span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Autobiography">
+                    <span> Autobiography</span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Guide">
+                    <span> Guide </span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="History">
+                    <span> History</span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Languages">
+                    <span> Languages</span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Media">
+                    <span> Media</span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Politics">
+                    <span> Politics</span>
+                  </label>
+                </p>
+              </div>
+              <div class="form-group col-auto msform3">
+                <p>
+                  <label>
+                    <input class="filled-in" type="checkbox" value="1" name="Security">
+                    <span> National Security</span>
+                  </label>
+                </p>
+              </div>
+          </div>
+          <div class="row justify-content-right">
+            <div class="form-group col-md-4 offset-8 msform4">
+              <label class="fs-subtitle" for="Status">Select Status</label>
+              <select name="Status" id="Status" class="form-control" id="exampleFormControlSelect1" required>
+                <option value="Unread">Unread</option>
+                <option value="Read">Read</option>
+                <option value="In Progress">In Progress</option>
+              </select>
+                <div class="invalid-feedback">
+                  Please choose a status.
+                </div>
+            </div>
+          </div>
+
+
+
+        <button class="btn button btn-block" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
+{% endblock %}
