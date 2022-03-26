@@ -24,7 +24,7 @@ The CSS was designed to achieve a clean yet visually interesting layout. To this
 
 JavaScript was used only marginally to enable an as-you-type quick search and as such was incorporated directly into the layout.html template within a script tag.
 
-BookLog was originally created in August 2020 as my CS50 final project.
+BookLog was originally created in August 2020 as my [CS50](https://cs50.harvard.edu/x/2022/) final project.
 
 
 You can view a  short demo at: https://youtu.be/mI0ESddbIiA
